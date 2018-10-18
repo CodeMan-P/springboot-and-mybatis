@@ -14,6 +14,7 @@
 <head>
     <title>Hello</title>
     <script src="<%=basePath%>js/jquery-2.1.0.js"></script>
+    <script src="<%=basePath%>js/vue.min.js"></script>
     <script>
         $(document).ready(function () {
             console.log("123");
@@ -22,6 +23,16 @@
 </head>
 <body>
 <h1>Hello World!!!aaa!!!</h1>
-
+<div id="app">
+    {{ message }}
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!'
+        }
+    })
+</script>
 </body>
 </html>
