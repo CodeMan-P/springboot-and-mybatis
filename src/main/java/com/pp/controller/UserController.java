@@ -10,9 +10,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Date;
+import java.util.Map;
+
 @Controller
 @RequestMapping(value = "/user")
 public class UserController {
+    @RequestMapping(value = {"/", "/index"})
+    public String index(Map<String, Object> model) {
+        model.put("time", new Date());
+        model.put("message", "hello");
+        return "index";
+    }
+
     @Autowired
     private UserService userService;
     @Autowired
