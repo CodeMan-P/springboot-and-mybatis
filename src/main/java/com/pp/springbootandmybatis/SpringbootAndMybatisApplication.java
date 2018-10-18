@@ -19,6 +19,7 @@ public class SpringbootAndMybatisApplication extends SpringBootServletInitialize
     }
 
     public static void main(String[] args) {
+        System.out.println("123");
         SpringApplication.run(SpringbootAndMybatisApplication.class,args);
     }
 }

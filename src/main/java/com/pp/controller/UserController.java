@@ -6,10 +6,12 @@ import com.pp.model.User;
 import com.pp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.Map;
 
@@ -21,6 +23,12 @@ public class UserController {
         model.put("time", new Date());
         model.put("message", "hello");
         return "index";
+    }
+    @GetMapping("/thymeleaf")
+    String test(HttpServletRequest request) {
+        //逻辑处理
+        request.setAttribute("key", "hello world");
+        return "thymeleaf/index";
     }
 
     @Autowired

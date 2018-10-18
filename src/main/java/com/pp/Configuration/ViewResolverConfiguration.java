@@ -37,11 +37,11 @@ public class ViewResolverConfiguration extends WebMvcConfigurerAdapter {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
         resolver.setPrefix("/WEB-INF/");
 //            resolver.setSuffix(".jsp");
-//            resolver.setViewNames("jsps/*");
+//        resolver.setViewNames("jsps/*");
 //            resolver.setPrefix("/");
         resolver.setSuffix(".jsp");
         resolver.setViewNames("*");
-        resolver.setOrder(Ordered.HIGHEST_PRECEDENCE);
+        resolver.setOrder(2);
         //resolver.setViewClass(JstlView.class);
         return resolver;
     }
@@ -58,7 +58,7 @@ public class ViewResolverConfiguration extends WebMvcConfigurerAdapter {
     public ITemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setTemplateMode("HTML");
-        templateResolver.setPrefix("/templates/");
+        templateResolver.setPrefix("/WEB-INF/classes/templates/");
         templateResolver.setSuffix(".html");
         templateResolver.setCharacterEncoding("utf-8");
         templateResolver.setCacheable(false);

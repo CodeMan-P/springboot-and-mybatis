@@ -1,6 +1,17 @@
 server:
   port: 8888
 spring:
+  devtools:
+    restart:
+      #是否支持热部署
+      enabled: true
+      #添加那个目录的文件需要restart
+      #additional-paths: src/main/java
+      #排除那个目录的文件不需要restart
+      exclude: WEB-INF/**,static/**,public/**
+    livereload:
+      enabled: true #是否支持livereload
+      port: 35729
   datasource:
     name: test
     url: jdbc:mysql://127.0.0.1:3306/demo?useSSL=true
@@ -36,9 +47,3 @@ pagehelper:
   supportMethodsArguments: true
   params: count=countSql
 
-devtools:
-  livereload:
-    enabled: true #是否支持livereload
-    port: 35729
-  restart:
-    enabled: true #是否支持热部署
